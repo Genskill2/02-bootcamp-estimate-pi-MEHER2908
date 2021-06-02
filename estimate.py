@@ -1,34 +1,6 @@
 import math
 import unittest
-import random
-def wallis(n):
-    pi=0.0
-    for i in range(n):
-       left = (2 * i)/(2 * i - 1)
-        right = (2 * i)/(2 * i + 1)
-        total = left * right
-        pi = pi + total
 
-    return pi
-def monte_calro(n):
-    circle_points=0
-    square_points=0
-    for i in range(n**2):
-        rand_x= random.uniform(-1, 1)
-        rand_y= random.uniform(-1, 1)
-
-
-        origin_dist= rand_x**2 + rand_y**2
-
-
-         if origin_dist<= 1:
-            circle_points+= 1
-
-        square_points+= 1
-
-
-    pi = 4* circle_points/ square_points
-    return pi
 
 class TestWallis(unittest.TestCase):
     def test_low_iters(self):
